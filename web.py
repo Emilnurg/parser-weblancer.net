@@ -1,7 +1,7 @@
 
-import csv
+import csv #Формат для вывода результатов в виде строк, разделенных запятыми
 import urllib.request
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup # Сам парсер для разбора HTML-синтаксиса. Установка python -m pip install bs4
 
 BASE_URL = 'https://www.weblancer.net/jobs/'
 
@@ -22,7 +22,7 @@ def get_page_count(html):
     return int(var2)
 
 
-def save(projects, path):
+def save(projects, path): #формат и путь вывода инфы
     with open(path, 'w') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(('Тема', 'Описание', 'Цена', 'Заявки'))
